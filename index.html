@@ -1,139 +1,164 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S. Nicolas Ramirez Villalobos y Austin Morales</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.NicolasRamirezVillalobos&AustinMorales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    .screen {
+      min-height: 100vh;
+      padding: 40px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 20px;
+      background: #00c79c;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Playfair Display', serif;
+    }
+    button:hover {
+      background: #00a784;
+    }
+    h1, h2 {
+      margin-bottom: 20px;}
+#screen1 {
+  background: linear-gradient(135deg, #091E3A, #1E3C72);
+  color: white;
+}
+#screen2 {
+  background: url('background2.jpg') center/cover no-repeat fixed;
+  
+}
+#screen3 {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #222;
+}
+#screen4 {
+  background: #1f1f1f;
+}
 
-    <!-- Fuente personalizada desde Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
-        body {
-            text-align: center;
-            font-family: 'Style Script', cursive;
-            color: white;
-            background-image: url('background.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            min-height: 100vh;
-            transition: background-image 0.5s ease-in-out;
-        }
-
-        h1, h2 {
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            margin: 10px 0;
-        }
-
-        /* El contenedor del enlace de video será reemplazado por una imagen */
-        .video-image {
-            display: none; /* Inicialmente está oculto */
-            margin-top: 20px;
-        }
-
-        .buttons-container {
-            position: fixed;
-            bottom: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .buttons-container button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            font-family: 'Style Script', cursive;
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .buttons-container button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Estilos para la Vista 2 */
-        .project-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .project-item {
-            width: 200px;
-            text-align: center;
-        }
-
-        .project-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .project-item h3 {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
-
-        .project-item p {
-            font-size: 1em;
-            color: rgba(255, 255, 255, 0.8);
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <div id="ventana1" class="ventana">
-        <h1>S. Nicolás Ramírez Villalobos</h1>
-        <h1>y</h1>
-        <h1>Austin Morales</h1>
+  <div id="screen1" class="screen">
+    <h1>S. Nicolas Ramirez Villalobos</h1>
+    <h1>y</h1>
+    <h1>Austin Morales</h1>
+    <h2>¿Quienes somos?</h2>
+    <img src="https://via.placeholder.com/300" alt="Screen One">
+    <div>
+      <button onclick="showScreen(2)">Proyectos</button>
+      <button onclick="showScreen(3)">Habilidades</button>
+      <button onclick="showScreen(4)">Otros</button>
     </div>
-
-    <!-- Ventana 2 -->
-    <div id="ventana2" class="ventana">
-        <h1>Proyectos</h1>
-        <img src="proyecto1.jpg" alt="Proyecto 1">
-        <img src="proyecto2.jpg" alt="Proyecto 2">
-        <img src="proyecto3.jpg" alt="Proyecto 3">
-        <img src="proyecto4.jpg" alt="Proyecto 4">
+  </div>  <div id="screen2" class="screen hidden">
+    <h1>Algunos de nuestros Proyectos realizados</h1>
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Valeria: Espíritu de venganza</h2>
+        <img src="https://via.placeholder.com/150" alt="Proyecto 1">
+        <p>Videojuego metroidvania de ritmo acelerado realizado en Unity con C#.</p>
+      </div>
+      <div class="card">
+        <h2>Amai Buki</h2>
+        <img src="https://via.placeholder.com/150" alt="Proyecto 2">
+        <p>FPS con sistema LAN, hecho con GzDooM utilizando Zscript y ACS.</p>
+      </div>
+      <div class="card">
+        <h2>Cabañas Luna</h2>
+        <img src="https://via.placeholder.com/150" alt="Proyecto 3">
+        <p>Página web inspirada en mitología céltica y nórdica, realizada con HTML, CSS y JS.</p>
+      </div>
+      <div class="card">
+        <h2>MoonLight Burgers</h2>
+        <img src="https://via.placeholder.com/150" alt="Proyecto 4">
+        <p>Carta digital de una hamburgueseria ficticia, desarollado mediante HTML, CSS, y JS/p>
+      </div>
     </div>
-
-    <!-- Contenedor de botones -->
-    <div class="buttons-container" id="buttons">
-        <button onclick="mostrarventa(1)">Vista 2</button>
-        <button onclick="mostrarventa(2)">Vista 3</button>
-        <button onclick="changeContent(4)">Vista 4</button>
+    <button onclick="showScreen(1)">Regresar al Hub</button>
+  </div>  <div id="screen3" class="screen hidden">
+    <h1>Habilidades</h1>
+    <div class="grid grid-4">
+      <div class="card">
+        <h2>Lenguajes de Programación</h2>
+        <p>HTML, CSS, JavaScript, Python, C#, Zscript</p>
+      </div>
+      <div class="card">
+        <h2>Herramientas de Software</h2>
+        <p>Unity, Blender, FL Studio, Krita, entre otras</p>
+      </div>
+      <div class="card">
+        <h2>Diseño y Funcionalidad</h2>
+        <p>Originalidad en el aspecto artístico y la experiencia de usuario</p>
+      </div>
+      <div class="card">
+        <h2>Instalación y Mantenimiento</h2>
+        <p>Software, drivers, sistemas operativos</p>
+      </div>
+      <div class="card">
+        <h2>Gestión de Datos</h2>
+        <p>Bases de datos y estructuras organizadas</p>
+      </div>
+      <div class="card">
+        <h2>Producción de Recursos</h2>
+        <p>Ilustración, texturizado, música y generación de assets</p>
+      </div>
     </div>
-
-    <script>
-        function mostrarVentana(ventana) {
-            // Ocultar todas las ventanas
-            document.getElementById('ventana1').style.display = 'none';
-            document.getElementById('ventana2').style.display = 'none';
-            
-            // Mostrar la ventana seleccionada
-            if (ventana === 1) {
-                document.getElementById('ventana1').style.display = 'block';
-            } else if (ventana === 2) {
-                document.getElementById('ventana2').style.display = 'block';
-            }
-        }
-    </script>
-</body>
+    <button onclick="showScreen(1)">Regresar al Hub</button>
+  </div>  <div id="screen4" class="screen hidden">
+    <h1>Final Screen</h1>
+    <p>Aquí podría incluirse información adicional, enlaces, videos o contacto.</p>
+    <button onclick="showScreen(1)">Regresar al Hub</button>
+  </div>  <script>
+    function showScreen(num) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('screen' + i).classList.add('hidden');
+      }
+      document.getElementById('screen' + num).classList.remove('hidden');
+    }
+  </script></body>
 </html>
